@@ -15,7 +15,7 @@ func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method == http.MethodGet {
 			currentTime := time.Now()
-			formattedTime := currentTime.Format("2006-01-02 15:04:05")
+			formattedTime := currentTime.Format(time.RFC3339)
 
 			timeResponse := TimeResponse{FormattedTime: formattedTime}
 
@@ -33,7 +33,7 @@ func main() {
 
 	fmt.Println("Сервер запущено")
 
-	if err := http.ListenAndServe(":8080", nil); err != nil {
+	if err := http.ListenAndServe(":8795", nil); err != nil {
 		fmt.Println(err)
 	}
 }
