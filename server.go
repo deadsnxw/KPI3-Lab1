@@ -33,7 +33,7 @@ func main() {
 
 	fmt.Println("Сервер запущено")
 
-	if err := http.ListenAndServe(":8080", nil); err != nil {
+	if err := http.ListenAndServe(":8795", nil); err != nil {
 		fmt.Println(err)
 	}
 }
