@@ -12,7 +12,7 @@ type TimeResponse struct {
 }
 
 func main() {
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/time", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method == http.MethodGet {
 			currentTime := time.Now()
 			formattedTime := currentTime.Format("2006-01-02 15:04:05")
